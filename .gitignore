@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# EWARS bulletin PDF cache -- re-downloaded on demand by src/ingest/ewars_scraper.py
+data/raw/ewars_pdfs/
+
+# Office lock files
+~$*

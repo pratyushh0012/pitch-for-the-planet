@@ -1,0 +1,5 @@
+horizon,k,members,loo_cv_MAE,test_MAE,test_RMSE,test_MAPE,test2024_MAE,test2025_MAE,best_baseline,best_baseline_MAE,improvement_pct
+1,15,LightGBM|logratio|decay; ExtraTrees|logratio|decay; XGBoost|level|decay; RandomForest|logratio|decay; ExtraTrees|level|decay; XGBoost|logratio|decay; ...,48.4,52.4,68.8,12.5,44.8,61.2,persistence,55.2,5.1
+2,30,XGBoost|level|decay; XGBoost|level|window; XGBoost|level|expand; ExtraTrees|level|decay; Ridge|ratio_blend|decay; Ridge|ratio_blend|window; ...,64.4,56.9,74.2,12.8,51.5,62.7,persistence,67.0,15.1
+3,30,XGBoost|level|decay; XGBoost|level|window; Ridge|ratio_blend|decay; XGBoost|level|expand; ExtraTrees|level|decay; RandomForest|ratio_blend|decay; ...,71.8,57.8,75.4,13.6,57.6,58.0,seasonal + drift,70.6,18.1
+4,30,XGBoost|level|decay; XGBoost|level|expand; XGBoost|level|window; XGBoost|level|decay; Ridge|ratio_blend|decay; ExtraTrees|level|decay; ...,78.3,58.1,76.3,13.2,58.2,58.1,seasonal + drift,64.6,10.0

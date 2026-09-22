@@ -1,0 +1,14 @@
+# Pinned to the versions the models were trained with -- the pickled
+# ensembles in models/ can fail to load under other versions.
+pandas==2.3.3
+numpy==2.3.5
+scikit-learn==1.7.2
+xgboost==3.4.1
+lightgbm==4.7.0
+joblib==1.5.2
+streamlit==1.51.0
+altair==5.5.0
+matplotlib>=3.7
+requests>=2.31
+python-docx>=1.1
+python-pptx>=1.0

@@ -1,0 +1,26 @@
+{
+  "1": {
+    "champion": "LightGBM|logratio|decay|w0.0",
+    "test_MAE": 62.0,
+    "best_baseline_MAE": 55.2,
+    "improvement_pct": -12.4
+  },
+  "2": {
+    "champion": "XGBoost|level|decay|w0.0",
+    "test_MAE": 58.1,
+    "best_baseline_MAE": 67.0,
+    "improvement_pct": 13.3
+  },
+  "3": {
+    "champion": "XGBoost|level|decay|w0.0",
+    "test_MAE": 59.4,
+    "best_baseline_MAE": 70.6,
+    "improvement_pct": 15.9
+  },
+  "4": {
+    "champion": "XGBoost|level|decay|w0.0",
+    "test_MAE": 70.0,
+    "best_baseline_MAE": 64.6,
+    "improvement_pct": -8.4
+  }
+}

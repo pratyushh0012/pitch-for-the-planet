@@ -1,0 +1,12 @@
+region,annual_mm_mean,peak_week,corr_with_ktm_weekly,corr_with_ktm_anomaly
+Kathmandu cell (used so far),1178.0,25,1.0,1.0
+All Nepal (39 cells),1245.0,25,0.88,0.8
+Terai / southern plains,1324.0,25,0.84,0.73
+Case-weighted districts,1230.0,25,0.95,0.92
+Province: Koshi,1412.0,25,0.92,0.87
+Province: Madhesh,1224.0,25,0.91,0.85
+Province: Bagmati,1253.0,25,0.98,0.96
+Province: Gandaki,1793.0,25,0.79,0.63
+Province: Lumbini,1395.0,33,0.71,0.53
+Province: Karnali,958.0,31,0.7,0.49
+Province: Sudurpashchim,878.0,31,0.55,0.32

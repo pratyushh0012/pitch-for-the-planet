@@ -1,0 +1,6 @@
+dhm_feature,predictors,r2_insample,r2_holdout_2023,mae_holdout_2023,dhm_mean
+rain_mean_mm,nasa_rain_sum+nasa_wet_days+nasa_rain_max_daily,0.882,0.894,8.84,33.39
+rain_max_mm,nasa_rain_sum+nasa_wet_days+nasa_rain_max_daily,0.786,0.823,23.33,80.58
+rain_std_mm,nasa_rain_sum+nasa_wet_days+nasa_rain_max_daily,0.746,0.818,5.32,18.11
+wet_days,nasa_wet_days+nasa_rain_sum,0.886,0.806,0.58,2.18
+max_daily_mm,nasa_rain_max_daily+nasa_rain_sum,0.677,0.698,16.02,39.58
