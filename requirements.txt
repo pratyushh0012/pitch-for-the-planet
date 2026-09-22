@@ -6,8 +6,9 @@ scikit-learn==1.7.2
 xgboost==3.4.1
 lightgbm==4.7.0
 joblib==1.5.2
-streamlit==1.51.0
-altair==5.5.0
+streamlit>=1.51
+pyarrow>=22  # older pyarrow has no Python 3.14 wheel and fails to build
+altair>=5.5,<6
 matplotlib>=3.7
 requests>=2.31
 python-docx>=1.1
