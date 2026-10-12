@@ -72,3 +72,44 @@ lead time** — model error is nearly flat (52→58) while baselines degrade.
 
 **Read `docs/PROGRESS.md` before pitching.** It records one result that matters:
 the rain-gauge data does *not* improve accuracy at the national weekly scale.
+
+---
+
+# DengueWatch Nepal
+
+4-week-ahead national dengue surge forecasts (spec: `dengue_project.md`). Shares the repo with MonsoonWatch; its own
+files are listed below.
+
+```bash
+streamlit run app/app.py                       # app (loads models/dengue/denguewatch.joblib, no retraining)
+
+# rebuild from scratch (run from project root, /opt/anaconda3/bin/python)
+python src/ingest/ewars_harvest.py             # download all EWARS bulletins 2016-2025 (network)
+python src/ingest/ewars_dengue_parse.py        # -> data/raw/ewars_dengue_weekly_v2.csv
+python src/ingest/nasa_power_v2.py             # NASA POWER incl. T2M_MIN/MAX (network); then merge to
+                                               #    data/raw/nasa_power_v2_daily.csv.gz (see data_audit_report)
+python src/audit.py                            # Phase 0 gate -> reports/data_audit_report.md
+python src/build_table.py                      # -> data/processed/weekly_table.csv, reports/cleaning_log.md
+python -m pytest tests                         # leakage tests
+python src/evaluate.py                         # rolling-origin back-test -> reports/results.md, figures/dengue/
+python src/train_final.py                      # -> models/dengue/denguewatch.joblib
+```
+
+Note: this folder is iCloud-synced and the disk is nearly full, so macOS evicts files right after they are written.
+That's why bulletin texts live in one archive (`data/raw/ewars_bulletin_texts.jsonl.gz`); set `EWARS_PDF_DIR` to a
+local folder when re-harvesting.
+
+## Put the MonsoonWatch demo online (Streamlit Community Cloud)
+
+The QR code on the slides (`reports/MonsoonWatch_3MT_slides.pptx`, `reports/figures/dengue/demo_qr.png`) points to
+**https://monsoonwatch-nepal.streamlit.app**. To make that address work:
+
+1. Push this folder to a GitHub repository (public, or private with Streamlit access).
+2. Go to https://share.streamlit.io → **Create app** → **Deploy a public app from GitHub**.
+3. Repository: your repo · Branch: `main` · Main file path: `app/app.py`.
+4. App URL: type **`monsoonwatch-nepal`** (must match the QR code).
+5. **Advanced settings** → Python version **3.13** (the saved model was built with it).
+6. Deploy. Streamlit installs `app/requirements.txt` automatically.
+7. Scan the QR on your phone to check it opens.
+
+If `monsoonwatch-nepal` is already taken, pick another name and regenerate the QR for the new address.
